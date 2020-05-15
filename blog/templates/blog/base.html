@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <title>Cyberblog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <title>SimpleBlog</title>
 </head>
 <body>
-    <div class="page-header">
+    <header class="header blog-header">
+        <h1 class='logo'><a href="/" class="logo__link">SimpleBlog</a></h1>
         {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
-        <h1><a href="/">Cyber Blog</a></h1>
+            <a href="{% url 'post_new' %}" class="button"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}  
+    </header>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
     </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
-        </div>
-    </div>
+    <footer class="footer">
+        <div>Просто чтобы было видно</div>
+    </footer>
 </body>
 </html>

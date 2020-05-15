@@ -2,12 +2,13 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
+        <section class="post">
+            <h1 class="post__title"><a href="{% url 'post_detail' pk=post.pk %}" class="title">{{ post.title }}</a></h1>
+            <p class="post__author">{{ post.author }}</p>
+            <p class="post__preview">{{ post.text|linebreaksbr }}</p>
+             <p class="post__public-date">
                 {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+             </p>
+        </section>
     {% endfor %}
 {% endblock %}
