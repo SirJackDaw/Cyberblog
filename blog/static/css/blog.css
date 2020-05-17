@@ -76,12 +76,23 @@ header {
     margin: 10px 0 3px 40px;
 }
 
+.button_detail{
+    color: #828282;
+}
+.button_detail:hover{
+    color: #0f0f0f;
+}
+
 .date {
     color: #828282;
 }
 
-.save {
+.button_action {
     float: right;
+    background-color: rgb(255, 255, 255); 
+    border: 3px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: inline-block;
 }
 
 .post-form textarea, .post-form input {
